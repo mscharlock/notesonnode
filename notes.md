@@ -26,4 +26,18 @@
 - Client Server Model:
   - A server is a computer performing services, responds to requests from Clients
   - Client asks for services through request
-- Browser = client, Web Server = server. They talk to each other through HTTP requests
+- Browser = client, Web Server = computer connected to the internet. They talk to each other through HTTP requests
+- C#, PHP or Ruby are other programming languages for doing stuff with servers
+- Node allows us to write JS for servers - wooo
+
+## What does JS need to manage a server?
+- Deal with files, databases
+- ability to reuse code, ability to accept/send requests
+- async
+- communicate over the internet
+
+##C++ Core
+- Node was developed while this guy was working at Joyent, but available on GH
+
+##JS Core
+- process.binding - grabs the C++ and makes it available in the JS
