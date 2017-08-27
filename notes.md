@@ -2,6 +2,7 @@
 
 ## V8 Javascript Engine
 - Layers of abstraction: Microprocessor + Machine language (ex: ARM, MIPS, x64, etc), Assembly language, C/C++, Javascript (very abstracted)
+
 - Node is written in C++ because V8, the thing that converts JS to MLang is written in C++
 
 ## JS Aside: JS Engines and the Ecmascript Specification
