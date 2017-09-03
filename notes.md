@@ -93,8 +93,14 @@ emtr.on('greet', function() {
 emtr.emit('greet'); //<-- this then makes the two functions we defined above to run on greet to go
 ```
   
-
-
+## Protocol: 
+A set of rules that two sides agree on to use when communicating (client and server agree to use these)
+Server: performs services, sends a response
+Client: asks for services, sends a request
+Each computer has an IP address (Internet Protocol: we all agreed that this set of numbers id's each compy) 
+Browser > opens a socket > Web Server
++ normally, the information we send along is in it's own protocol (HTTP, FTP, SMTP etc)
++ TCP is the transmission control protocol (aka, the protocol that handles how we send the information- we send the pieces individually in packets) Node sees this transmission as a stream (data stream)
 
 
 
