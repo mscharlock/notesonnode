@@ -45,3 +45,65 @@
 
 Super random but I want to remember it: 
 "Another key concept with classes is "polymorphism", which describes the idea that a general behavior from a parent class can be overridden in a child class to give it more specifics. In fact, relative polymorphism lets us reference the base behavior from the overridden behavior." - [from You Don't Know JS](ttps://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch4.md)
+
+## Events
++ System Events (happen in C++ Core thru libuv?) 
++ Custom Events (happen in JS through the event emitter) 
+
+## JS Aside: 
+We can have [] notation or . notation for properties in objects
++ We can also set variable equal to a string value and then use that variable (ex: var prop = 'greet' and then obj[prop] wocould return greet)
+We can put functions inside of arrays as items - just the function itself (not the return value) 
++ forEach loops through arrays to invoke all the functions in the array
+
+## Event Emitter: 
+emitter.js - we'll write our own emitter
+  + could use an ES6 class but here he uses a function constructor
+```
+function Emitter() {
+     this.events = {}; 
+}; 
+
+Emitter.prototype.on = function(type, listener) {
+     //type is the type of event, listener is the listener listening for the event//
+     this.events[type] = this.events[type] || [];
+     this.events[type].push(listener); //we're adding functions into the arr//
+};
+Emitter.prototype.emit = function(type) {
+    if (this.events[type]) {
+      this.events[type].forEach(function(listener) {
+        listener(); 
+       });
+};
+//to emit, we loop through the arr of functions//
+
+module.exports = Emitter;
+```
+To get the emitter in a different place, we require it in: 
+```
+var Emitter = require('./emitter'); 
+var emtr = new Emitter(); 
+emtr.on('greet', function() {
+     console.log('Somewhere, someone said hello');
+)}; //remember, greet is a property name on an object//
+emtr.on('greet', function() {
+     console.log('A greeting occured!'); 
+}); 
+
+emtr.emit('greet'); //<-- this then makes the two functions we defined above to run on greet to go
+```
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
